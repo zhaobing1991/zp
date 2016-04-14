@@ -24,7 +24,7 @@ html,body{
 
 #box{
     width: 640px;
-    height: 1136px;
+    height: 960px;
     overflow: hidden;
     position: absolute;
     left:50%;
@@ -49,7 +49,8 @@ html,body{
 }
 
 #ul1 li:nth-child(1){
-    background:url("img/bj.png") no-repeat center center;
+    background:url("img/fff.png") no-repeat center center;
+    background-size: 100%;
     z-index: 10;
 }
 #ul1 li:nth-child(2){
@@ -58,12 +59,15 @@ html,body{
 #ul1 li:nth-child(3){
     background:#ec7d74 url("img/Group7.png") no-repeat;
     background-position: 60% 40%;
+    background-size: 80%;
 }
 #ul1 li:nth-child(4){
     background:#79d4c6  url("img/bottom1.png") no-repeat center bottom;
+
+
 }
 #ul1 li:nth-child(5){
-    background:url("img/bj.png") no-repeat center center;
+    background:url("img/fff.png") no-repeat center center;
 }
 
 #ul1 li.zIndex{
@@ -71,27 +75,35 @@ html,body{
 }
 
 .a0 div{position: absolute; transition: all 1s; -webkit-transition: all 1s;}
-.a0 > div:nth-child(1){width: 395px; height: 142px; background: url("img/header.png") no-repeat; left: -65%; top: 4%;}
+.a0 > div:nth-child(1){width: 325px; height: 106px; background: url("img/header.png") no-repeat;
+    background-size:100%;left: -65%; top: 4%;}
 .a0 > div:nth-child(2){width: 0; height: 0; background: url("img/shouji.png") no-repeat;background-size: 100% 100%; left: 30%; top: 20%;}
 .a0 > div:nth-child(3){width: 140px ;height: 140px; background: url("img/weima.png") no-repeat; left: -25%; top: 72%;}
 .a0 > div:nth-child(4){width: 240px ;height: 60px; background: url("img/anzhuo.png") no-repeat; left: 105%; top: 72%;}
 .a0 > div:nth-child(5){width: 240px ;height: 60px; background: url("img/pingguo%20.png") no-repeat; left: 105%; top: 79%;}
 .a0 > div:nth-child(6){left: 45%; top: 89%;}
 
-#a0 > div:nth-child(1){left: 20%; top: 4%;}
-#a0 > div:nth-child(2){width: 265px; height: 541px; left: 30%; top: 20%;}
+#a0 > div:nth-child(1){left: 24%; top: 4%;}
+#a0 > div:nth-child(2){width: 240px; height: 476px; left: 30%; top: 20%;}
 #a0 > div:nth-child(3){left: 19%; top: 72%;}
 #a0 > div:nth-child(4){left: 45%; top: 72%;}
-#a0 > div:nth-child(5){left: 45%; top: 79%;}
+#a0 > div:nth-child(5){left: 45%; top: 80%;}
 #a0 > div:nth-child(6){left: 45%; top: 89%;}
 
 
 /**********************two**********************/
 .a1 div{position: absolute; transition: all 1s; -webkit-transition: all 1s;}
-.a1 div:nth-of-type(1){width:100%;height:76px;background:url("img/zhuangshi.png") no-repeat; left: -100%; top: 8%;}
-.a1 div:nth-of-type(2){width:70%;height:264px; background: url("img/Group2.png") no-repeat; left: 103%; top: 24%;}
-.a1 div:nth-of-type(3){width:100%;height:407px; background: url("img/Group 6.png") no-repeat; left: 0; top: 51%; opacity: 0; filter:alpha(opacity=0);}
-.a1 div:nth-of-type(4){width:100%;height:148px; background: url("img/masaike.png") no-repeat; left: 0; bottom: 0;}
+.a1 div:nth-of-type(1){width:100%;height:76px;background:url("img/zhuangshi.png") no-repeat; left: -100%; top: 8%;
+background-size: 78%;
+background-position: center}
+.a1 div:nth-of-type(2){width:70%;height:264px; background: url("img/Group2.png") no-repeat; left: 103%; top: 21%;
+background-size: 86%;
+background-position-x: 50%;}
+.a1 div:nth-of-type(3){width:100%;height:407px; background: url("img/Group 6.png") no-repeat; left: 0; top: 48%; opacity: 0; filter:alpha(opacity=0);
+background-size: 86%;
+background-position: center}
+.a1 div:nth-of-type(4){width:100%;height:12%; background: url("img/masaike.png") no-repeat; left: 0; bottom: 0;
+}
 .a1 div:nth-of-type(4) img{}
 
 #a1 div:nth-of-type(1){width:100%;height:76px;left: 0;}
@@ -100,15 +112,29 @@ html,body{
 
 /**********************three**********************/
 .a2 div{position: absolute; transition: all 1s; -webkit-transition: all 1s;}
-.a2 div:nth-child(1){width: 189px; height: 23px;background:url("img/text1.png") no-repeat;left:-30%;top:18%}
-.a2 div:nth-child(2){width: 309px; height: 23px;background:url("img/State%20font.png") no-repeat;left:101%;top:14%}
-.a2 div:nth-child(3){width: 111px; height: 111px;background:url("img/large.png") no-repeat;left:-17%;top:22%}
-.a2 div:nth-child(4){width: 316px; height: 74px;background:url("img/tiao3.png") no-repeat;left:101%;top:18%}
-.a2 div:nth-child(5){width: 237px; height: 71px;background:url("img/red.png") no-repeat;left:-37%;top:58%}
-.a2 div:nth-child(6){width: 284px; height: 222px;background:url("img/Group11.png") no-repeat;left: -45%;top:66%}
-.a2 div:nth-child(7){width: 301px; height: 109px;background:url("img/student.png") no-repeat;left:101%;top:64%}
-.a2 div:nth-child(8){width: 284px; height: 23px;background:url("img/canteen.png") no-repeat;left:101%;top:76%}
-.a2 div:nth-child(9){width: 640px; height: 148px;background:url("img/Shading.png") no-repeat;left:0;bottom:0;}
+.a2 div:nth-child(1){width: 189px; height: 23px;background:url("img/text1.png") no-repeat;left:-30%;top:17%;
+background-size: 80%;
+background-position: right}
+.a2 div:nth-child(2){width: 309px; height: 23px;background:url("img/State%20font.png") no-repeat;left:101%;top:14%;
+    background-size: 80%}
+.a2 div:nth-child(3){width: 25%; height: 111px;background:url("img/large.png") no-repeat;left:-20%;top:21%;
+background-position: center;
+background-size: 63%;}
+.a2 div:nth-child(4){width: 316px; height: 74px;background:url("img/tiao3.png") no-repeat;left:101%;top:18%;
+background-size: 80%}
+.a2 div:nth-child(5){width: 260px; height: 71px;background:url("img/red.png") no-repeat;left:-40%;top:58%;
+    background-size: 80%;
+background-position: right}
+.a2 div:nth-child(6){width: 284px; height: 222px;background:url("img/Group11.png") no-repeat;left: -45%;top:66%;
+background-size: 82%;
+background-position-x: 86%}
+.a2 div:nth-child(7){width: 301px; height: 109px;background:url("img/student.png") no-repeat;left:101%;top:64%;
+    background-size: 80%}
+.a2 div:nth-child(8){width: 284px; height: 23px;background:url("img/canteen.png") no-repeat;left:101%;top:76%;
+    background-size: 80%}
+.a2 div:nth-child(9){width: 640px; height: 148px;background:url("img/Shading.png") no-repeat;left:0;bottom:0;
+    background-size: 80%;
+background-position: right}
 .a2 div:nth-child(9) img{margin-top:3%;}
 
 #a2 div:nth-child(1){left:8%;}
@@ -234,15 +260,20 @@ html,body{
 .a4 div{position: absolute; transition: all 1s; -webkit-transition: all 1s;}
 .a4 div:nth-child(1){width: 184px; height: 77px; background: url("img/jinchisa.png") no-repeat; left: -30%; top: 15%;}
 .a4 div:nth-child(2){width:100%; left: 101%; top: 25%;font-size: 2rem; color: white;}
-.a4 div:nth-child(3){width: 220px; height: 220px; background: url("img/weima1.png") no-repeat; left: -50%; top: 35%;}
+.a4 div:nth-child(3){width: 30%; height: 20%; background: url("img/weima1.png") no-repeat; left: -50%; top: 35%;
+}
 .a4 div:nth-child(4){width: 320px; height: 80px; background: url("img/anzhuo1.png") no-repeat; left: 101%; top: 63%;}
 .a4 div:nth-child(5){width: 320px; height: 80px; background: url("img/pingguo1.png") no-repeat; left: -50%; top: 72%;}
 
-#a4 div:nth-child(1){width: 184px; height: 77px; background: url("img/jinchisa.png") no-repeat; left: 36%; top: 15%;}
-#a4 div:nth-child(2){ left: 1%; top: 25%;font-size: 2rem; color: white;}
-#a4 div:nth-child(3){width: 220px; height: 220px; background: url("img/weima1.png") no-repeat; left: 33%; top: 35%;}
-#a4 div:nth-child(4){width: 320px; height: 80px; background: url("img/anzhuo1.png") no-repeat; left: 25%; top: 63%;}
-#a4 div:nth-child(5){width: 320px; height: 80px; background: url("img/pingguo1.png") no-repeat; left: 25%; top: 72%;}
+#a4 div:nth-child(1){width: 184px; height: 77px; background: url("img/jinchisa.png") no-repeat; left: 36%; top: 15%;
+background-size: 80%;}
+#a4 div:nth-child(2){ left: 1%; top: 25%;font-size: 1.8rem; color: white;}
+#a4 div:nth-child(3){width: 220px; height: 220px; background: url("img/weima1.png") no-repeat; left: 36%; top: 35%;
+background-size: 80%;}
+#a4 div:nth-child(4){width: 320px; height: 80px; background: url("img/anzhuo1.png") no-repeat; left: 30%; top: 63%;
+background-size: 80%;}
+#a4 div:nth-child(5){width: 320px; height: 80px; background: url("img/pingguo1.png") no-repeat; left: 30%; top: 72%;
+    background-size: 80%;}
 
 .icon img{
     position:relative;

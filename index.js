@@ -3,11 +3,12 @@
  */
 var main = document.querySelector("#box");
 var oLis = document.querySelectorAll("#ul1>li");
-var winW = document.documentElement.clientWidth;
-var winH = document.documentElement.clientHeight;
+var winW = window.innerWidth;
+
+var winH =window.innerHeight;
 
 var desW = 640;
-var desH = 1136;
+var desH = 960;
 if(desW/desH<winW/winH){
     main.style.webkitTransform = 'scale('+winW/desW+')';
 }else{
@@ -27,7 +28,7 @@ function start(e) {
     this.startTouch = e.changedTouches[0].pageY;
 }
 function move(e) {
-    this.flag = true
+    this.flag = true;
     var moveTouch = e.changedTouches[0].pageY;
     var pos = moveTouch - this.startTouch;
     var index = this.index;
