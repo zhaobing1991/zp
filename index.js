@@ -7,7 +7,7 @@ var winW = document.documentElement.clientWidth;
 var winH = document.documentElement.clientHeight;
 
 var desW = 640;
-var desH = 960;
+var desH = 1136;
 if(desW/desH<winW/winH){
     main.style.webkitTransform = 'scale('+winW/desW+')';
 }else{
