@@ -13,17 +13,21 @@ if(desW/desH<winW/winH){
 }else{
     main.style.webkitTransform = 'scale('+winH/desH+')';
 }
-[].forEach.call(oLis,function(){
-    arguments[0].index=arguments[1];
-    arguments[0].addEventListener('touchstart',start,false);
-    arguments[0].addEventListener('touchmove',move,false);
-    arguments[0].addEventListener('touchend',end,false);
-});
-function start(e){
-    this.pageY= e.changedTouches[0].pageY;//手指触摸点的Y轴坐标
+
+[].forEach.call(oLis, function () {
+    var oLi = arguments[0];
+    oLi.index = arguments[1];
+    oLi.addEventListener("touchstart", start, false);
+    oLi.addEventListener("touchmove", move, false);
+    oLi.addEventListener("touchend", end, false);
+
+})
+
+function start(e) {
+    this.startTouch = e.changedTouches[0].pageY;
 }
 function move(e) {
-    this.flag = true;
+    this.flag = true
     var moveTouch = e.changedTouches[0].pageY;
     var pos = moveTouch - this.startTouch;
     var index = this.index;
@@ -61,5 +65,5 @@ function end(e) {
 }
 
  document.addEventListener("touchmove",function(){
- },false);
+ });
 
