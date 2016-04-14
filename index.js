@@ -3,8 +3,8 @@
  */
 var main = document.querySelector("#box");
 var oLis = document.querySelectorAll("#ul1>li");
-var winW=window.innerWidth;
-var winH=window.innerHeight;
+var winW = document.documentElement.clientWidth;
+var winH = document.documentElement.clientHeight;
 
 var desW = 640;
 var desH = 1136;
@@ -13,18 +13,17 @@ if(desW/desH<winW/winH){
 }else{
     main.style.webkitTransform = 'scale('+winH/desH+')';
 }
-
 [].forEach.call(oLis,function(){
     arguments[0].index=arguments[1];
     arguments[0].addEventListener('touchstart',start,false);
     arguments[0].addEventListener('touchmove',move,false);
     arguments[0].addEventListener('touchend',end,false);
 });
-function start(e) {
-    this.startTouch = e.changedTouches[0].pageY;
+function start(e){
+    this.pageY= e.changedTouches[0].pageY;//手指触摸点的Y轴坐标
 }
 function move(e) {
-    this.flag = true
+    this.flag = true;
     var moveTouch = e.changedTouches[0].pageY;
     var pos = moveTouch - this.startTouch;
     var index = this.index;
@@ -61,6 +60,6 @@ function end(e) {
     }
 }
 
-document.addEventListener("touchmove",function(){
-},false);
+ document.addEventListener("touchmove",function(){
+ },false);
 
