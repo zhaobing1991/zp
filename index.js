@@ -3,67 +3,73 @@
  */
 var main = document.querySelector("#box");
 var oLis = document.querySelectorAll("#ul1>li");
-var winW = document.documentElement.clientWidth;
-var winH = document.documentElement.clientHeight;
+var winW=window.innerWidth;
+var winH=window.innerHeight;
 
 var desW = 640;
 var desH = 960;
-if (winW / winH <= desW / desH) {
-    main.style.webkitTransform = "scale(" + winH / desH + ")";
-} else {
-    main.style.webkitTransform = "scale(" + winW / desW + ")";
+if(desW/desH<winW/winH){
+    main.style.webkitTransform = 'scale('+winW/desW+')';
+}else{
+    main.style.webkitTransform = 'scale('+winH/desH+')';
 }
 
-[].forEach.call(oLis, function () {
-    var oLi = arguments[0];
-    oLi.index = arguments[1];
-    oLi.addEventListener("touchstart", start, false);
-    oLi.addEventListener("touchmove", move, false);
-    oLi.addEventListener("touchend", end, false);
-
-})
-
-function start(e) {
-    this.startTouch = e.changedTouches[0].pageY;
+[].forEach.call(oLis,function(){
+    arguments[0].index=arguments[1];
+    arguments[0].addEventListener('touchstart',start,false);
+    arguments[0].addEventListener('touchmove',move,false);
+    arguments[0].addEventListener('touchend',end,false);
+});
+function start(e){
+    this.pageY= e.changedTouches[0].pageY;//手指触摸点的Y轴坐标
 }
-function move(e) {
-    this.flag = true
-    var moveTouch = e.changedTouches[0].pageY;
-    var pos = moveTouch - this.startTouch;
-    var index = this.index;
+function move(e){
+    e.preventDefault();//阻止默认行为
+    var touchMove= e.changedTouches[0].pageY;//滑过的Y轴坐标
+    var changePos=touchMove-this.pageY;//滑过的距离
+    var cur=this.index;//当前索引
+    var step=1/2;
+    var scalePos=(Math.abs(changePos)/winH)*step;//比例
     [].forEach.call(oLis,function(){
-        if(arguments[1]!=index){
-            arguments[0].style.display = "none";
+
+        if(arguments[1]==cur){
+            arguments[0].className="zIndex";
+            arguments[0].style.display="block";
+            arguments[0].id="a"+(this.index+1);
         }
-        arguments[0].className = "";
+        if(arguments[1]!=cur){
+            arguments[0].style.display="none";
+
+        }
+        arguments[0].className="";
         arguments[0].firstElementChild.id="";
-    });
+    })
+    if(changePos>0){
+        var pos=-winH+changePos;
+        this.preSIndex=cur==0?oLis.length-1:cur-1;
 
-    if (pos > 0) {
-        this.prevSIndex = (index == 0 ? oLis.length - 1 : index - 1);
-        var duration = -winH+pos;
+    }else if(changePos<0){
+        var pos=winH+changePos;
+        this.preSIndex=cur==oLis.length-1?0:cur+1;
 
-    } else if (pos) {
-        this.prevSIndex = (index == oLis.length-1 ? 0 : index + 1);
-        var duration = winH+pos;
     }
-    oLis[this.prevSIndex].style.display = "block";
-    oLis[this.prevSIndex].style.webkitTransform = "translate(0,"+duration+"px)";
-    oLis[this.prevSIndex].className="zIndex";
-    oLis[index].style.webkitTransform = "scale("+(1-Math.abs(pos)/winH*1/2)+") translate(0,"+pos+"px)";
+    oLis[this.preSIndex].style.webkitTransform="translate(0,"+pos+"px)";//让上一张出来的距离等于我滑过的距离
+    oLis[this.preSIndex].className="zIndex";
+    oLis[this.preSIndex].style.display="block";//让上一张显示；
+    oLis[cur].style.webkitTransform="scale("+(1-scalePos)+") translate(0,"+changePos+"px)";
+    //让当前的图片可是的高等于我滑过的距离
+
+
 }
-function end(e) {
-    if(this.flag){
-        oLis[this.prevSIndex].style.webkitTransform = "translate(0,0)";
-        oLis[this.prevSIndex].style.webkitTransition = "0.7s";
-        oLis[this.prevSIndex].addEventListener("webkitTransitionEnd", function () {
-            this.style.webkitTransition = "";
-            this.firstElementChild.id="a"+this.index;
+function end(e){
+    oLis[this.preSIndex].style.webkitTransform="translate(0,0)";//让上一张图片完整的显示
+    oLis[this.preSIndex].style.webkitTransition="0.5s";//给上一张图片0.5s的过度效果
+    oLis[this.preSIndex].addEventListener('webkitTransitionEnd',function(){
+        this.style.webkitTransition="";
+        this.firstElementChild.id="a"+(this.index+1);
+    })
 
-        }, false)
-    }
 }
+document.addEventListener("touchstart",function(){
 
- document.addEventListener("touchmove",function(){
- },false);
-
+},false)
